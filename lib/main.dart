@@ -28,7 +28,22 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('복잡한 UI')),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: Text(
+          '복잡한 UI',
+          style: TextStyle(color: Colors.black),
+        ),
+        centerTitle: true,
+        actions: [
+          IconButton(
+              icon: Icon(
+                Icons.add,
+                color: Colors.black,
+              ),
+              onPressed: () {})
+        ],
+      ),
       body: Center(
         child: Text(
           '$_index 페이지',
