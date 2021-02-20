@@ -24,6 +24,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   var _index = 0; // 페이지
+  var _pages = [Page1(), Page2(), Page3()];
 
   @override
   Widget build(BuildContext context) {
@@ -44,12 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {})
         ],
       ),
-      body: Center(
-        child: Text(
-          '$_index 페이지',
-          style: TextStyle(fontSize: 40),
-        ),
-      ),
+      body: _pages[_index],
       bottomNavigationBar: BottomNavigationBar(
         onTap: (index) {
           setState(() {
@@ -71,6 +67,48 @@ class _MyHomePageState extends State<MyHomePage> {
             label: '내정보',
           ),
         ],
+      ),
+    );
+  }
+}
+
+class Page1 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Center(
+        child: Text(
+          '홈 페이지',
+          style: TextStyle(fontSize: 40),
+        ),
+      ),
+    );
+  }
+}
+
+class Page2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Center(
+        child: Text(
+          '이용서비스',
+          style: TextStyle(fontSize: 40),
+        ),
+      ),
+    );
+  }
+}
+
+class Page3 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Center(
+        child: Text(
+          '내 정보',
+          style: TextStyle(fontSize: 40),
+        ),
       ),
     );
   }
