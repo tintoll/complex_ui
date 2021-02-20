@@ -75,14 +75,65 @@ class _MyHomePageState extends State<MyHomePage> {
 class Page1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text(
-          '홈 페이지',
-          style: TextStyle(fontSize: 40),
-        ),
-      ),
+    return Column(
+      children: [
+        _buildTop(),
+        _buildMiddle(),
+        _buildBottom(),
+      ],
     );
+  }
+
+  Widget _buildTop() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Column(
+          children: [
+            Icon(
+              Icons.local_taxi,
+              size: 40,
+            ),
+            Text('택시'),
+          ],
+        ),
+        Column(
+          children: [
+            Icon(
+              Icons.local_taxi,
+              size: 40,
+            ),
+            Text('블랙'),
+          ],
+        ),
+        Column(
+          children: [
+            Icon(
+              Icons.local_taxi,
+              size: 40,
+            ),
+            Text('바이크'),
+          ],
+        ),
+        Column(
+          children: [
+            Icon(
+              Icons.local_taxi,
+              size: 40,
+            ),
+            Text('대리'),
+          ],
+        ),
+      ],
+    );
+  }
+
+  Widget _buildMiddle() {
+    return Text('Middle');
+  }
+
+  Widget _buildBottom() {
+    return Text('Bottom');
   }
 }
 
