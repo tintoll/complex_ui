@@ -85,43 +85,91 @@ class Page1 extends StatelessWidget {
   }
 
   Widget _buildTop() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    return Column(
       children: [
-        Column(
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Icon(
-              Icons.local_taxi,
-              size: 40,
+            Column(
+              children: [
+                Icon(
+                  Icons.local_taxi,
+                  size: 40,
+                ),
+                Text('택시'),
+              ],
             ),
-            Text('택시'),
+            Column(
+              children: [
+                Icon(
+                  Icons.local_taxi,
+                  size: 40,
+                ),
+                Text('블랙'),
+              ],
+            ),
+            Column(
+              children: [
+                Icon(
+                  Icons.local_taxi,
+                  size: 40,
+                ),
+                Text('바이크'),
+              ],
+            ),
+            Column(
+              children: [
+                Icon(
+                  Icons.local_taxi,
+                  size: 40,
+                ),
+                Text('대리'),
+              ],
+            ),
           ],
         ),
-        Column(
-          children: [
-            Icon(
-              Icons.local_taxi,
-              size: 40,
-            ),
-            Text('블랙'),
-          ],
+        SizedBox(
+          height: 20,
         ),
-        Column(
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Icon(
-              Icons.local_taxi,
-              size: 40,
+            Column(
+              children: [
+                Icon(
+                  Icons.local_taxi,
+                  size: 40,
+                ),
+                Text('택시'),
+              ],
             ),
-            Text('바이크'),
-          ],
-        ),
-        Column(
-          children: [
-            Icon(
-              Icons.local_taxi,
-              size: 40,
+            Column(
+              children: [
+                Icon(
+                  Icons.local_taxi,
+                  size: 40,
+                ),
+                Text('블랙'),
+              ],
             ),
-            Text('대리'),
+            Column(
+              children: [
+                Icon(
+                  Icons.local_taxi,
+                  size: 40,
+                ),
+                Text('바이크'),
+              ],
+            ),
+            Column(
+              children: [
+                Icon(
+                  Icons.local_taxi,
+                  size: 40,
+                ),
+                Text('대리'),
+              ],
+            ),
           ],
         ),
       ],
