@@ -85,97 +85,135 @@ class Page1 extends StatelessWidget {
   }
 
   Widget _buildTop() {
-    return Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Column(
-              children: [
-                Icon(
-                  Icons.local_taxi,
-                  size: 40,
+    return Padding(
+      padding: const EdgeInsets.only(top: 20, bottom: 20),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  print('GestureDetector 택시 클릭');
+                },
+                child: Column(
+                  children: [
+                    Icon(
+                      Icons.local_taxi,
+                      size: 40,
+                    ),
+                    Text('택시'),
+                  ],
                 ),
-                Text('택시'),
-              ],
-            ),
-            Column(
-              children: [
-                Icon(
-                  Icons.local_taxi,
-                  size: 40,
-                ),
-                Text('블랙'),
-              ],
-            ),
-            Column(
-              children: [
-                Icon(
-                  Icons.local_taxi,
-                  size: 40,
-                ),
-                Text('바이크'),
-              ],
-            ),
-            Column(
-              children: [
-                Icon(
-                  Icons.local_taxi,
-                  size: 40,
-                ),
-                Text('대리'),
-              ],
-            ),
-          ],
-        ),
-        SizedBox(
-          height: 20,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Column(
-              children: [
-                Icon(
-                  Icons.local_taxi,
-                  size: 40,
-                ),
-                Text('택시'),
-              ],
-            ),
-            Column(
-              children: [
-                Icon(
-                  Icons.local_taxi,
-                  size: 40,
-                ),
-                Text('블랙'),
-              ],
-            ),
-            Column(
-              children: [
-                Icon(
-                  Icons.local_taxi,
-                  size: 40,
-                ),
-                Text('바이크'),
-              ],
-            ),
-            Opacity(
-              opacity: 0.0,
-              child: Column(
-                children: [
-                  Icon(
-                    Icons.local_taxi,
-                    size: 40,
-                  ),
-                  Text('대리'),
-                ],
               ),
-            ),
-          ],
-        ),
-      ],
+              GestureDetector(
+                onTap: () {
+                  print('GestureDetector 블랙 클릭');
+                },
+                child: Column(
+                  children: [
+                    Icon(
+                      Icons.local_taxi,
+                      size: 40,
+                    ),
+                    Text('블랙'),
+                  ],
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  print('GestureDetector 바이크 클릭');
+                },
+                child: Column(
+                  children: [
+                    Icon(
+                      Icons.local_taxi,
+                      size: 40,
+                    ),
+                    Text('바이크'),
+                  ],
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  print('GestureDetector 대리 클릭');
+                },
+                child: Column(
+                  children: [
+                    Icon(
+                      Icons.local_taxi,
+                      size: 40,
+                    ),
+                    Text('대리'),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              InkWell(
+                onTap: () {
+                  print('InkWell 택시 클릭');
+                },
+                child: Column(
+                  children: [
+                    Icon(
+                      Icons.local_taxi,
+                      size: 40,
+                    ),
+                    Text('택시'),
+                  ],
+                ),
+              ),
+              InkWell(
+                onTap: () {
+                  print('InkWell 블랙 클릭');
+                },
+                child: Column(
+                  children: [
+                    Icon(
+                      Icons.local_taxi,
+                      size: 40,
+                    ),
+                    Text('블랙'),
+                  ],
+                ),
+              ),
+              InkWell(
+                onTap: () {
+                  print('InkWell 바이크 클릭');
+                },
+                child: Column(
+                  children: [
+                    Icon(
+                      Icons.local_taxi,
+                      size: 40,
+                    ),
+                    Text('바이크'),
+                  ],
+                ),
+              ),
+              Opacity(
+                opacity: 0.0,
+                child: Column(
+                  children: [
+                    Icon(
+                      Icons.local_taxi,
+                      size: 40,
+                    ),
+                    Text('대리'),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 
