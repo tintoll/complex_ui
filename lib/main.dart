@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -75,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
 class Page1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return ListView(
       children: [
         _buildTop(),
         _buildMiddle(),
@@ -218,7 +219,23 @@ class Page1 extends StatelessWidget {
   }
 
   Widget _buildMiddle() {
-    return Text('Middle');
+    return CarouselSlider(
+      options: CarouselOptions(height: 400.0),
+      items: [1,2,3,4,5].map((i) {
+        return Builder(
+          builder: (BuildContext context) {
+            return Container(
+                width: MediaQuery.of(context).size.width, // 기기 정보를 얻는다.
+                margin: EdgeInsets.symmetric(horizontal: 5.0),
+                decoration: BoxDecoration(
+                    color: Colors.amber
+                ),
+                child: Text('text $i', style: TextStyle(fontSize: 16.0),)
+            );
+          },
+        );
+      }).toList(),
+    );
   }
 
   Widget _buildBottom() {
