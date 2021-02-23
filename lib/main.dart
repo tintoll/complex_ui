@@ -240,9 +240,11 @@ class Page1 extends StatelessWidget {
                 decoration: BoxDecoration(color: Colors.amber),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
-                  child: Image.network(url, fit: BoxFit.cover,),
-                )
-            );
+                  child: Image.network(
+                    url,
+                    fit: BoxFit.cover,
+                  ),
+                ));
           },
         );
       }).toList(),
@@ -250,7 +252,18 @@ class Page1 extends StatelessWidget {
   }
 
   Widget _buildBottom() {
-    return Text('Bottom');
+    final items = List.generate(10, (index) {
+      return ListTile(
+        leading: Icon(Icons.notifications_none),
+        title: Text('[이벤트] 이것은 공지입니다.'),
+      );
+    });
+
+    return ListView(
+      physics: NeverScrollableScrollPhysics(), // 이 리스트 스크롤 동작 금지
+      shrinkWrap: true, // 이 리스트가 다른 스크롤 객체 안에 있다면 true로 설정
+      children: items,
+    );
   }
 }
 
