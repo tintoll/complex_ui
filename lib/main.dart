@@ -1,5 +1,12 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+final dummyItems = [
+  'https://cdn.pixabay.com/photo/2020/04/04/16/07/stadttheater-5002861_960_720.jpg',
+  'https://cdn.pixabay.com/photo/2021/02/10/22/23/lake-6003746_960_720.jpg',
+  'https://cdn.pixabay.com/photo/2021/01/13/22/50/waterford-5915361_960_720.jpg'
+];
 
 void main() {
   runApp(MyHome());
@@ -220,17 +227,21 @@ class Page1 extends StatelessWidget {
 
   Widget _buildMiddle() {
     return CarouselSlider(
-      options: CarouselOptions(height: 400.0),
-      items: [1,2,3,4,5].map((i) {
+      options: CarouselOptions(
+        height: 150,
+        autoPlay: true,
+      ),
+      items: dummyItems.map((url) {
         return Builder(
           builder: (BuildContext context) {
             return Container(
                 width: MediaQuery.of(context).size.width, // 기기 정보를 얻는다.
                 margin: EdgeInsets.symmetric(horizontal: 5.0),
-                decoration: BoxDecoration(
-                    color: Colors.amber
-                ),
-                child: Text('text $i', style: TextStyle(fontSize: 16.0),)
+                decoration: BoxDecoration(color: Colors.amber),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8.0),
+                  child: Image.network(url, fit: BoxFit.cover,),
+                )
             );
           },
         );
